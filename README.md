@@ -11,6 +11,7 @@
     * Create table *tb_mahassiwa* pada database
 
     ![alt text](https://lh5.googleusercontent.com/C37yvyVu2OxDUvB-_jEOgYLq1BvHE9q-T3EkB1xkHvv1QebdUjR6x37EPOsQSp_C7q1axA3Bds88DbizcjSqYIv8-zdwrkr07-YJ-QKQ)
+    
     ![alt text](https://lh5.googleusercontent.com/SJvmj6WwKqFz6c5uqxOQAKY2YL_2yYmo4KoyMP6OgvP_jflmxNQg8AjHX9XSQGNmYgB_f7Pvd65swgOU_gIF5QOUSpUZZnQJDkDbEAaG)
     
 2. Buat koneksi ke database
@@ -19,7 +20,7 @@
     * Gunakan perintah  berikut untuk membuat Project baru ( *pastikan dalm keadaan terkoneksi ke internet* )
 
     * Tunggu proses inisialisasi hingga selesai
-    * Setelah proses selesai masuk kedalam  folder project yang baru saja dibuat dengan perintah berikut
+* Setelah proses selesai masuk kedalam  folder project yang baru saja dibuat dengan perintah berikut
 
 Sehingga tampilan akan seperti berikut pada terminal
 

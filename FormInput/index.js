@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
     StyleSheet
 } from 'react-native';
-
+import { API_mahasiswa } from './../API/tambah';
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -18,10 +18,25 @@ export default class App extends Component {
             hp: '',
         }
     }
-    
+
     render() {
-        const simpan=()=>{
-            console.log(this.state)
+       const POST =async()=>{
+           try {
+            console.log("Cetak Respond----->")
+            var respond=await API_mahasiswa(this.state)
+            console.log(respond);
+            console.log(respond.status);
+            if(respond.status){
+                alert(respond.pesan)
+            }else{
+                alert(respond.pesan)
+            }
+           } catch (error) {
+               console.log(error)
+           }
+       }
+        const simpan = () => {
+            POST()
         }
         return (
             <View style={styles.container}>
@@ -34,39 +49,39 @@ export default class App extends Component {
                     </View>
                     <View style={styles.halfLayout}>
                         <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e)=>this.setState({nobp:e})} value={this.state.nobp} />
+                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ nobp: e })} value={this.state.nobp} />
                     </View>
                     <View style={styles.halfLayout}>
                         <Text style={styles.lable}>Nama</Text>
                     </View>
                     <View style={styles.halfLayout}>
                         <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e)=>this.setState({nama:e})} value={this.state.nama} />
+                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ nama: e })} value={this.state.nama} />
                     </View>
                     <View style={styles.halfLayout}>
                         <Text style={styles.lable}>Jurusan</Text>
                     </View>
                     <View style={styles.halfLayout}>
                         <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e)=>this.setState({jurusan:e})} value={this.state.jurusan} />
+                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ jurusan: e })} value={this.state.jurusan} />
                     </View>
                     <View style={styles.halfLayout}>
                         <Text style={styles.lable}>Alamat</Text>
                     </View>
                     <View style={styles.halfLayout}>
                         <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e)=>this.setState({alamat:e})} value={this.state.alamat} />
+                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ alamat: e })} value={this.state.alamat} />
                     </View>
                     <View style={styles.halfLayout}>
                         <Text style={styles.lable}>Nomor Handphone</Text>
                     </View>
                     <View style={styles.halfLayout}>
                         <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e)=>this.setState({hp:e})} value={this.state.hp} />
+                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ hp: e })} value={this.state.hp} />
                     </View>
                     <View style={styles.halfLayout}>
-                        <TouchableOpacity style={styles.button} onPress={()=>simpan()} activeOpacity={0.6}>
-                            <Text style={styles.lable}>Daftar</Text>
+                        <TouchableOpacity style={styles.button} onPress={() => simpan()} activeOpacity={0.6}>
+                            <Text style={styles.lable}>SIMPAN</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
