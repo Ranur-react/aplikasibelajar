@@ -8,7 +8,7 @@ export const API_mahasiswa = async (e) => {
   formdata.append("alamat", e.alamat)
   formdata.append("hp", e.hp)
 
-  let respond = await fetch("http://192.168.43.107/phpapi/APLIKASIBELAJAR/", {
+  let respond = await fetch("http://192.168.43.107/phpapi/APLIKASIBELAJAR/insert.php", {
     method: "POST",
     headers: { 'Content-Type': "multipart/form-data" },
     body: formdata,

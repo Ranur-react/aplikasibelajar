@@ -1,5 +1,7 @@
-### Tutorial Form Input React-Native to MYSQL dengan PHP Native
+## Tutorial Form Input React-Native to MYSQL dengan PHP Native
 
+
+#### A. Mempersiapkan Database 
 1. Buat Database dan Table seperti berikut
     * Create database *db_mahasiswa* pada mysql
 
@@ -14,8 +16,18 @@
     
     ![alt text](https://lh5.googleusercontent.com/SJvmj6WwKqFz6c5uqxOQAKY2YL_2yYmo4KoyMP6OgvP_jflmxNQg8AjHX9XSQGNmYgB_f7Pvd65swgOU_gIF5QOUSpUZZnQJDkDbEAaG)
     
-2. Buat koneksi ke database
-3. Buat API POST received dengan metode :?
+
+#### A. Mempersiapkan Back-End / API SERVER
+
+2. Buatlah Folder project baru pada xamp/htdoc/APLIKASIBELAJAR sebagai *PHP API Server* agar aplikasi dapat terhubung ke database 
+
+    * Buat file koneksi.php   pada folder Project sebagai koneksi ke database mysql  pada *php server*
+        *   ![alt text](https://lh5.googleusercontent.com/phzjFqVoDUfCBX16tdP_vekrQaLiTskBGUG0yk2ANnnUmDjxvNuJWCggU6P3B9-thowBb5PyUhqRu1NqJIRdd3IDZ1rbfzvWk9i5VCoV)
+
+
+3. Buat file index.php pada folder project sebagai Model/controller pengatur dan pengirim data ke dalam database ataupun ke dalam aplikasi
+    *  API POST received dari aplikasi
+
 4. Buat Project Baru pada react-native 
     * Gunakan perintah  berikut untuk membuat Project baru ( *pastikan dalm keadaan terkoneksi ke internet* )
 
