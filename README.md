@@ -89,15 +89,15 @@
 
     * Buka file *app.js* Hapus Semua Script di dalam file tersebut lalu ganti dengan scripts seperti berikut
 
-    ![alt text](readme\image\db_8.png)
+    ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_8.png)
 
     * Buat *folder baru* pada project dengan nama *FormInput*  
 
-     ![alt text](readme\image\db_9.png)
+     ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_9.png)
 
    * Buat file *index.js* pada foder */FormInput*   project dengan dengan script seperti berikut  
     
-    ![alt text](readme\image\db_10.png)
+    ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_10.png)
 
 * 
  ```javascript
