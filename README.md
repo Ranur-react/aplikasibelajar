@@ -394,6 +394,7 @@ const styles = StyleSheet.create({
 #### F.Cara menjalankan API pada Front-End
 
 * pastikan ip pada komputer host tempat API Server di letakan,
+
 * pastikan ip tersebut dapat di mengakses API Server
 * setelah dapat dipastikan API Server dapat di akses gunakan ip tersebut untuk konfigurasi url Acces pada API Client front-end
 
