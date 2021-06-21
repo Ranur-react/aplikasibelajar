@@ -487,7 +487,7 @@ const styles = StyleSheet.create({
 
 
 
-
+<!-- 
 Buat State penampung data yang di inputkan
 Buat External funtions dengan props parameter untuk proses SEND data kedalam API MYSQL dengan vanilla JS
-Panggil External Functions tersebut kedalam event
+Panggil External Functions tersebut kedalam event -->
