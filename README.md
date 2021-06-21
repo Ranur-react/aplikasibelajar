@@ -114,7 +114,8 @@ import {
 } from 'react-native';
 import { API_mahasiswa, API_mahasiswa_update, API_mahasiswa_tampil,API_mahasiswa_delete} from '../API';
 import TampilData from './../TampilData';
-export default class App extends Component {
+
+export default class FormInput extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -363,20 +364,35 @@ const styles = StyleSheet.create({
 ```
 
 
-3. Setelah kodingan ini selesai tampilan pada Emulator akan berubah  seperti berikut
+    *  Setelah kodingan ini selesai tampilan pada Emulator akan berubah  seperti berikut
 
-5. Selanjutnya rancang design Form yang sesuai dengan data yang akan kita inputkan pada database.
-Buat folder baru dengan nama FormInput pada Projects
-
-
-Buat file index.js  pada folder yang telah dibuat
+![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/front-1.jpeg)
 
 
 
+#### E. Mempersiapkan API pada Front-End
+
+5. Sipkan function-functions  script  Vanilla JS, dengan type funtions *asyncronouse await*  API Client  yang berguna untuk acces ke API Server (back-end) php yang sudah ada sebelumnya 
+
+    * buat folder baru denga nama *API* dan sertakan file *index.js* di dalamnya
+    * pada file *API/index.js* kita tuliskan script berikut sebagai kumpuan fuctions yang diperlukan
 
 
-Setelah Files index.js berhasil dibuat pada folder, selanjutnya coba tuliskan script berikut pada pada files index.js 
 
+
+#### F. Mempersiapkan Tampil pada Front-End
+6. Selanjutnya rancang design view data yang sudah berhasil di simpan, pada view data ini sudah termasuk perintah untuk Update dan delete
+
+    * buat folder baru denga nama *TampilData* dan sertakan file *index.js* di dalamnya
+    * pada file *TampilData/index.js* kita tuliskan script berikut 
+
+
+
+#### F.Cara menjalankan API pada Front-End
+
+* pastikan ip pada komputer host tempat API Server di letakan,
+* pastikan ip tersebut dapat di mengakses API Server
+* setelah dapat dipastikan API Server dapat di akses gunakan ip tersebut untuk konfigurasi url Acces pada API Client front-end
 
 
 

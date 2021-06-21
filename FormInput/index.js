@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 import { API_mahasiswa, API_mahasiswa_update, API_mahasiswa_tampil,API_mahasiswa_delete} from '../API';
 import TampilData from './../TampilData';
-export default class App extends Component {
+
+export default class FormInput extends Component {
     constructor(props) {
         super(props);
         this.state = {
