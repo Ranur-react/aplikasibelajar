@@ -4,88 +4,165 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
+    ScrollView,
     StyleSheet
 } from 'react-native';
-import { API_mahasiswa } from './../API/tambah';
+import { API_mahasiswa, API_mahasiswa_update, API_mahasiswa_tampil } from './../API/tambah';
+import TampilData from './../TampilData';
 export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            mode: true,
+            data: [],
             nobp: '0',
             nama: '',
             jurusan: '',
             alamat: '',
             hp: '',
         }
+        const GET = async () => {
+            try {
+                console.log("Cetak Respond Data Tampil----->")
+                var respond = await API_mahasiswa_tampil()
+                this.setState({ data: respond.data })
+                console.log(this.state.data);
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        GET();
     }
 
     render() {
-       const POST =async()=>{
-           try {
-            console.log("Cetak Respond----->")
-            var respond=await API_mahasiswa(this.state)
-            console.log(respond);
-            console.log(respond.status);
-            if(respond.status){
-                alert(respond.pesan)
-            }else{
-                alert(respond.pesan)
+        const GET = async () => {
+            try {
+                console.log("Cetak Respond Data Tampil----->")
+                var respond = await API_mahasiswa_tampil()
+                this.setState({ data: respond.data })
+                console.log(this.state.data);
+            } catch (error) {
+                console.log(error)
             }
-           } catch (error) {
-               console.log(error)
-           }
-       }
+        }
+        const POST = async () => {
+            try {
+                console.log("Cetak Respond----->")
+                var respond = await API_mahasiswa(this.state)
+                console.log(respond);
+                console.log(respond.status);
+                if (!respond.status) {
+                    alert(respond.pesan)
+                }
+                GET();
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        const POSTUPDATE = async () => {
+            try {
+                console.log("Cetak Respond Update----->")
+                var respond = await API_mahasiswa_update(this.state)
+                console.log(respond);
+                console.log(respond.status);
+                if (!respond.status) {
+                    alert(respond.pesan)
+                }else{
+                    nobpChange()
+                }
+                GET();
+            } catch (error) {
+                console.log(error)
+            }
+        }
         const simpan = () => {
             POST()
         }
+        const updateSimpan = () => {
+            POSTUPDATE()
+
+        }
+        const update = (e) => {
+            console.log("Hasil dari Reaksi Klik")
+            this.setState({
+                mode: false,
+                nobp: e.nobp,
+                nama: e.nama,
+                jurusan: e.jurusan,
+                alamat: e.alamat,
+                hp: e.hp,
+            })
+        }
+        const hapus = () => {
+            POSTDELETE()
+        }
+        const submit = () => {
+            if (this.state.mode) {
+                simpan();
+            }
+            else {
+                updateSimpan()
+            }
+        }
+        const nobpChange = () => {
+            this.setState({ nobp: '' })
+            this.setState({ nama: '' })
+            this.setState({ alamat: '' })
+            this.setState({ jurusan: '' })
+            this.setState({ hp: '' })
+            this.setState({ mode: true })
+        }
         return (
-            <View style={styles.container}>
-                <View style={styles.layout}>
-                    <View style={styles.fullLayout}>
-                        <Text style={styles.title}>Inpu Mahasiswa</Text>
+            <ScrollView >
+                <View style={styles.container}>
+                    <View style={styles.layout}>
+                        <View style={styles.fullLayout}>
+                            <Text style={styles.title}>{!this.state.mode ? 'Edit' : 'Tambah'} Mahasiswa</Text>
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable} >NoBp</Text>
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable}>: </Text>
+                            <TextInput style={styles.input} onChangeText={(e) => this.setState({ nobp: e })} value={this.state.nobp} onFocus={() => nobpChange()} />
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable}>Nama</Text>
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable}>: </Text>
+                            <TextInput style={styles.input} onChangeText={(e) => this.setState({ nama: e })} value={this.state.nama} />
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable}>Jurusan</Text>
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable}>: </Text>
+                            <TextInput style={styles.input} onChangeText={(e) => this.setState({ jurusan: e })} value={this.state.jurusan} />
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable}>Alamat</Text>
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable}>: </Text>
+                            <TextInput style={styles.input} onChangeText={(e) => this.setState({ alamat: e })} value={this.state.alamat} />
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable}>Nomor Handphone</Text>
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <Text style={styles.lable}>: </Text>
+                            <TextInput style={styles.input} onChangeText={(e) => this.setState({ hp: e })} value={this.state.hp} />
+                        </View>
+                        <View style={styles.halfLayout}>
+                            <TouchableOpacity style={styles.button}  onPress={() => submit()} activeOpacity={0.6}>
+                                <Text style={styles.lable}>{!this.state.mode ? 'Edit' : 'Tambah'}</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable} >NoBp</Text>
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ nobp: e })} value={this.state.nobp} />
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable}>Nama</Text>
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ nama: e })} value={this.state.nama} />
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable}>Jurusan</Text>
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ jurusan: e })} value={this.state.jurusan} />
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable}>Alamat</Text>
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ alamat: e })} value={this.state.alamat} />
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable}>Nomor Handphone</Text>
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <Text style={styles.lable}>: </Text>
-                        <TextInput style={styles.input} onChangeText={(e) => this.setState({ hp: e })} value={this.state.hp} />
-                    </View>
-                    <View style={styles.halfLayout}>
-                        <TouchableOpacity style={styles.button} onPress={() => simpan()} activeOpacity={0.6}>
-                            <Text style={styles.lable}>SIMPAN</Text>
-                        </TouchableOpacity>
-                    </View>
+                    <TampilData props={this.state.data} evenDelete={(e) => hapus(e)} evenUpdate={(e) => update(e)} />
                 </View>
-            </View>
+            </ScrollView>
         );
     }
 }
@@ -100,10 +177,12 @@ const styles = StyleSheet.create({
     layout: {
         // flex:1,
         backgroundColor: 'rgba(50,50,50,0.1)',
-        height: 500,
+        height: 400,
         borderRadius: 20,
         padding: 20,
-        width: '80%',
+        marginBottom: 20,
+        marginTop: 20,
+        width: '90%',
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row',
@@ -147,12 +226,11 @@ const styles = StyleSheet.create({
 
     },
     button: {
-        backgroundColor: 'grey',
         height: 30,
         width: 100,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 10,
-        backgroundColor: 'green',
+        backgroundColor: '#9cc081',
     }
 });

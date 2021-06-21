@@ -4,7 +4,8 @@
     Text,
     TextInput,
     Button,
-    StyleSheet
+    StyleSheet,
+    ScrollView,
   } from 'react-native';
 import FormInput from './FormInput';
   export default class App extends Component {
