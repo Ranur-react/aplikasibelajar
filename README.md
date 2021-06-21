@@ -29,7 +29,18 @@
     * Buat file *insert.php* dengan isi script seperti dibawah pada folder project sebagai interface **menambah** data ke  database
           ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_5.png)
 
-4. Buat Project Baru pada react-native 
+    * Buat file *update.php* dengan isi script seperti dibawah pada folder project sebagai interface **menambah** data ke  database
+          ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_6.png)
+    
+
+
+    * Buat file *delete.php* dengan isi script seperti dibawah pada folder project sebagai interface **menghapus** data ke  database
+          ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_7.png)
+
+
+
+#### D. Mempersiapkan Font-End / API SERVER
+3. Buat Project Baru pada react-native 
     * Gunakan perintah  berikut untuk membuat Project baru ( *pastikan dalm keadaan terkoneksi ke internet* )
 
     * Tunggu proses inisialisasi hingga selesai
