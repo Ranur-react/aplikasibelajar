@@ -12,21 +12,22 @@
 
     * Create table *tb_mahassiwa* pada database
 
-    ![alt text](https://lh5.googleusercontent.com/C37yvyVu2OxDUvB-_jEOgYLq1BvHE9q-T3EkB1xkHvv1QebdUjR6x37EPOsQSp_C7q1axA3Bds88DbizcjSqYIv8-zdwrkr07-YJ-QKQ)
+    ![alt text](readme\image\db_1.png)
     
-    ![alt text](https://lh5.googleusercontent.com/SJvmj6WwKqFz6c5uqxOQAKY2YL_2yYmo4KoyMP6OgvP_jflmxNQg8AjHX9XSQGNmYgB_f7Pvd65swgOU_gIF5QOUSpUZZnQJDkDbEAaG)
-    
+    ![alt text](readme\image\db_2.png)
 
 #### B. Mempersiapkan Back-End / API SERVER
 
-2. Buatlah Folder project baru pada xamp/htdoc/APLIKASIBELAJAR sebagai *PHP API Server* agar aplikasi dapat terhubung ke database 
+2. Buatlah Folder project baru pada *xamp/htdoc/APLIKASIBELAJAR/phpapi* sebagai *PHP API Server* agar aplikasi dapat terhubung ke database 
 
-    * Buat file koneksi.php   pada folder Project sebagai koneksi ke database mysql  pada *php server*
-        *   ![alt text](https://lh5.googleusercontent.com/phzjFqVoDUfCBX16tdP_vekrQaLiTskBGUG0yk2ANnnUmDjxvNuJWCggU6P3B9-thowBb5PyUhqRu1NqJIRdd3IDZ1rbfzvWk9i5VCoV)
+    * Buat file koneksi.php  dengan isi script seperti dibawah pada folder Project sebagai koneksi ke database mysql  pada *php server*
+           ![alt text](readme\image\db_3.png)
 
+    * Buat file *index.php* dengan isi script seperti dibawah pada folder project sebagai interface **menampilkan** data dari database
+          ![alt text](readme\image\db_4.png)
 
-3. Buat file index.php pada folder project sebagai interface menampilakn data dari database
-    
+    * Buat file *insert.php* dengan isi script seperti dibawah pada folder project sebagai interface **menambah** data ke  database
+          ![alt text](readme\image\db_5.png)
 
 4. Buat Project Baru pada react-native 
     * Gunakan perintah  berikut untuk membuat Project baru ( *pastikan dalm keadaan terkoneksi ke internet* )

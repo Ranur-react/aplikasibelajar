@@ -53,6 +53,8 @@ export default class App extends Component {
                 console.log(respond.status);
                 if (!respond.status) {
                     alert(respond.pesan)
+                }else{
+                    nobpChange()
                 }
                 GET();
             } catch (error) {
