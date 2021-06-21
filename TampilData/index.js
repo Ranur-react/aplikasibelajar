@@ -32,7 +32,7 @@ export default class App extends Component {
                         <TouchableOpacity style={styles.button} onPress={() => this.props.evenUpdate(e.data)} activeOpacity={0.6}>
                             <Text >Edit</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.deleteButton} onPress={() => hapus(e.data.nobp)} activeOpacity={0.6}>
+                        <TouchableOpacity style={styles.deleteButton} onPress={() => this.props.evenDelete(e.data.nobp)} activeOpacity={0.6}>
                             <Text >Delete</Text>
                         </TouchableOpacity>
                     </View>

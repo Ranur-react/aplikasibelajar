@@ -7,7 +7,7 @@ import {
     ScrollView,
     StyleSheet
 } from 'react-native';
-import { API_mahasiswa, API_mahasiswa_update, API_mahasiswa_tampil } from './../API/tambah';
+import { API_mahasiswa, API_mahasiswa_update, API_mahasiswa_tampil,API_mahasiswa_delete} from './../API/tambah';
 import TampilData from './../TampilData';
 export default class App extends Component {
     constructor(props) {
@@ -75,6 +75,22 @@ export default class App extends Component {
                 console.log(error)
             }
         }
+        const POSTDELETE = async (e) => {
+            try {
+                console.log("Cetak Respond Update----->")
+                var respond = await API_mahasiswa_delete(e)
+                console.log(respond);
+                console.log(respond.status);
+                if (!respond.status) {
+                    alert(respond.pesan)
+                }else{
+                    nobpChange()
+                }
+                GET();
+            } catch (error) {
+                console.log(error)
+            }
+        }
         const simpan = () => {
             POST()
         }
@@ -93,8 +109,8 @@ export default class App extends Component {
                 hp: e.hp,
             })
         }
-        const hapus = () => {
-            POSTDELETE()
+        const hapus = (e) => {
+            POSTDELETE(e)
         }
         const submit = () => {
             if (this.state.mode) {
