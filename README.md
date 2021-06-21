@@ -398,9 +398,17 @@ const styles = StyleSheet.create({
 * pastikan ip tersebut dapat di mengakses API Server
 * setelah dapat dipastikan API Server dapat di akses gunakan ip tersebut untuk konfigurasi url Acces pada API Client front-end
 
+## Create by Ranur
 
+jika temen-temen merasa kodingan ini bermanfaat silahkan gunakan dan dukung repostory ini agar terus berkarya,
 
+dukungan finansial
+Rek. Mandiri 
+a.n Rahmat Nur
+norek. 1110014951053
 
+email (rahmatnur845@gmail.com)
+https://wa.me/+6283182647716
 
 
 
