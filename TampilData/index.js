@@ -7,7 +7,7 @@ import {
     StyleSheet,
     ScrollView,
 } from 'react-native';
-import { API_mahasiswa } from '../API/tambah';
+import { API_mahasiswa } from '../API';
 export default class App extends Component {
     constructor(props) {
         super(props);
