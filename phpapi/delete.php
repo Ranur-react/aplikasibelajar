@@ -17,3 +17,4 @@ if(isset($_POST['nobp'])){
     $data['status']= false;
 }
 echo json_encode($data);
+?>
