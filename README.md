@@ -380,12 +380,15 @@ const styles = StyleSheet.create({
 
 
 
-#### F. Mempersiapkan Tampil pada Front-End
+#### F. Mempersiapkan Tampil Data pada Front-End
 6. Selanjutnya rancang design view data yang sudah berhasil di simpan, pada view data ini sudah termasuk perintah untuk Update dan delete
 
     * buat folder baru denga nama *TampilData* dan sertakan file *index.js* di dalamnya
     * pada file *TampilData/index.js* kita tuliskan script berikut 
 
+    * Sehingga tampilan akan seperti berikut 
+
+![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/front-2.jpeg)
 
 
 #### F.Cara menjalankan API pada Front-End
