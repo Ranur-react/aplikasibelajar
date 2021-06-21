@@ -12,22 +12,22 @@
 
     * Create table *tb_mahassiwa* pada database
 
-    ![alt text](readme\image\db_1.png)
+    ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_1.png)
     
-    ![alt text](readme\image\db_2.png)
+    ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_2.png)
 
 #### B. Mempersiapkan Back-End / API SERVER
 
 2. Buatlah Folder project baru pada *xamp/htdoc/APLIKASIBELAJAR/phpapi* sebagai *PHP API Server* agar aplikasi dapat terhubung ke database 
 
     * Buat file koneksi.php  dengan isi script seperti dibawah pada folder Project sebagai koneksi ke database mysql  pada *php server*
-           ![alt text](readme\image\db_3.png)
+           ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_3.png)
 
     * Buat file *index.php* dengan isi script seperti dibawah pada folder project sebagai interface **menampilkan** data dari database
-          ![alt text](readme\image\db_4.png)
+          ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_4.png)
 
     * Buat file *insert.php* dengan isi script seperti dibawah pada folder project sebagai interface **menambah** data ke  database
-          ![alt text](readme\image\db_5.png)
+          ![alt text](https://github.com/Ranur-react/aplikasibelajar/blob/form/readme/image/db_5.png)
 
 4. Buat Project Baru pada react-native 
     * Gunakan perintah  berikut untuk membuat Project baru ( *pastikan dalm keadaan terkoneksi ke internet* )
