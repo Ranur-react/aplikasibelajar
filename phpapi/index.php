@@ -1,26 +1,20 @@
 <?php
 include 'koneksi.php';
-if(isset($_POST['nobp'])){
+$query = mysqli_query($conn, " SELECT * FROM `tb_mahasiswa`;");
 
-    $data['data']=$_POST['nobp'];
-    $nobp=$_POST['nobp'];
-    $nama=$_POST['nama'];
-    $jurusan=$_POST['jurusan'];
-    $alamat=$_POST['alamat'];
-    $hp=$_POST['hp'];
+if ($query) {
+    $database = [];
+    while ($d = mysqli_fetch_array($query)) {
+        $database[] = $d;
+    }
+    $data['data'] = $database;
 
-    $query=mysqli_query($conn,"INSERT INTO `db_mahasiswa`.`tb_mahasiswa` (`nobp`, `nama`, `jurusan`, `alamat`, `hp`) VALUES ('$nobp', '$nama', '$jurusan', '$alamat', '$hp');");
-    
-    if(!$query){
-        $data['pesan']= "Query atau data yang dikirimkan/POST mungkin salah atau sudah ada di dalam database, coba cek lagi deh query dan data yang dikirmkan  tadi";
-        $data['status']= false;
-    }
-    else{
-        $data['pesan']= "Data Berhasil masuk database";
-        $data['status']= true;
-    }
-}else{
-    $data['pesan']= "Data yang di POST belum nyampe sini";
-    $data['status']= false;
+    $data['pesan'] = "";
+    $data['status'] = true;
+} else {
+    $data['data'] = "";
+    $data['pesan'] = "Data gaga diambil dari database";
+    $data['status'] = false;
 }
 echo json_encode($data);
+?>
